@@ -1,15 +1,15 @@
+import {
+    addToDoToProject,
+    createInitialProjects
+} from "./projects";
 import "./styles/styles.css";
 import { createToDo } from "./todo";
 
 function main() {
-    const todo = createToDo(
-        "groceries",
-        "buy bread",
-        "19-01-25",
-        "high",
-        "preferably dark bread",
-        false);
-    console.log(todo);
+    let projects = createInitialProjects();
+    const todo = createToDo("groceries");
+    addToDoToProject(todo, projects);
+    console.log(projects);
 }
 
 main();
