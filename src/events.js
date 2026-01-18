@@ -10,3 +10,10 @@ export function bindAddToDoBtn() {
         hide(dom.addToDo);
     });
 }
+
+export function bindSubmitForm() {
+    dom.toDoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        console.log("submit");
+    })
+}
