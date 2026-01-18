@@ -18,7 +18,7 @@ function createProject(name = "Default", active) {
     };
 }
 
-export function addToDoToProject(todo, projects) {
+export function addToDoToActiveProject(todo, projects) {
     projects.forEach(element => {
         if (element.active) element.toDoList.push(todo);
     });

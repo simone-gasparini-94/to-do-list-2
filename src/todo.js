@@ -1,5 +1,6 @@
 export function createToDo
-    (title, description, dueDate, priority, notes, checklist) {
+    (title, description, dueDate,
+        priority, notes, checklist) {
     const id = crypto.randomUUID();
     return {
         id,
