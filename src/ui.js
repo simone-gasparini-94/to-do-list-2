@@ -31,3 +31,11 @@ function renderToDo(toDo) {
     div.appendChild(title);
     dom.toDoList.appendChild(div);
 }
+
+export function render(element) {
+    element.classList.remove("hidden");
+}
+
+export function hide(element) {
+    element.classList.add("hidden");
+}
