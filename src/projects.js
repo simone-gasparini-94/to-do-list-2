@@ -1,11 +1,15 @@
-export function createInitialProjects() {
+export function createProjectList() {
     let projects = [];
-    projects.push(createProject("all", true));
     projects.push(createProject("default", true));
     return projects;
 }
 
-export function createProject(name = "default", active) {
+export function addProject(projects, name = "default", active) {
+    const project = createProject(name, active);
+    projects.push(project);
+}
+
+function createProject(name = "default", active) {
     let toDoList = [];
     return {
         name,
