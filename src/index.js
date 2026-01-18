@@ -5,6 +5,7 @@ import {
 } from "./projects";
 import { createToDo } from "./todo";
 import { renderProjects } from "./ui";
+import { bindAddToDo } from "./events";
 
 function main() {
     let projects = createProjectList();
@@ -17,6 +18,10 @@ function main() {
         false);
     addToDoToProject(todo, projects);
     renderProjects(projects);
+    bindAddToDo((todo) => {
+        addToDoToProject(todo, projects);
+        renderProjects(projects);
+    })
     console.log(projects);
 }
 
