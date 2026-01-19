@@ -1,16 +1,18 @@
 import {
     isDatainStorage,
-    load
+    load,
+    save
 } from "./storage"
 
 export function createProjectList() {
-    const data = "projects";
+    const projectsString = "projects";
     let projects;
-    if (isDatainStorage(data) == true) {
-        projects = load(data);
+    if (isDatainStorage(projectsString) == true) {
+        projects = load(projectsString);
     } else {
         projects = [];
-        projects.push(createProject("Default", true));  
+        projects.push(createProject("Default", true));
+        save(projectsString, projects);
     }  
     return projects;
 }
