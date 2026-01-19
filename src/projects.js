@@ -1,6 +1,17 @@
+import {
+    isDatainStorage,
+    load
+} from "./storage"
+
 export function createProjectList() {
-    let projects = [];
-    projects.push(createProject("Default", true));
+    const data = "projects";
+    let projects;
+    if (isDatainStorage(data) == true) {
+        projects = load(data);
+    } else {
+        projects = [];
+        projects.push(createProject("Default", true));  
+    }  
     return projects;
 }
 
@@ -11,7 +22,7 @@ export function addProject(projects, name = "Default") {
 }
 
 function createProject(name = "Default", active) {
-    let toDoList = [];
+    const toDoList = [];
     const id = crypto.randomUUID();
     return {
         id,
