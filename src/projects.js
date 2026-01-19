@@ -22,10 +22,22 @@ function createProject(name = "Default", active) {
 }
 
 export function findActiveProject(projects) {
-    const active = projects.find((project) => project.active);
-    return active;
+    const activeProject = projects.find((project) => project.active);
+    return activeProject;
 }
 
 export function addToDoToActiveProject(todo, active) {
     active.toDoList.push(todo);
+}
+
+export function setProjectToActive(projects, id) {
+    setAllProjectsToInactive(projects);
+    const project = projects.find((project) => project.id === id);
+    project.active = true;
+}
+
+function setAllProjectsToInactive(projects) {
+    projects.forEach((project) => {
+        project.active = false;
+    });
 }

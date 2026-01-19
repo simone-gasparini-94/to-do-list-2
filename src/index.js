@@ -3,7 +3,8 @@ import {
     addProject,
     addToDoToActiveProject,
     createProjectList,
-    findActiveProject
+    findActiveProject,
+    setProjectToActive
 } from "./projects";
 import { createToDo } from "./todo";
 import { 
@@ -40,7 +41,10 @@ function main() {
         addProject(projects, title);
         renderProjects(projects);
     });
-    bindSelectProject();
+    bindSelectProject((id) => {
+        setProjectToActive(projects, id);
+        renderProjects(projects);
+    });
 }
 
 main();

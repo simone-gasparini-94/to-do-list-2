@@ -42,6 +42,7 @@ export function bindSubmitProjectForm(callback) {
 
 export function bindSelectProject(callback) {
     dom.projects.addEventListener("click", (e) => {
-        console.log(e.target.dataset.id);
+        const id = e.target.dataset.id;
+        callback(id);
     })
 }
