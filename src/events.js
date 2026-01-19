@@ -17,7 +17,6 @@ export function bindSubmitForm(callback) {
         show(dom.addToDo);
         e.preventDefault();
         const f = dom.toDoForm.elements;
-        console.log(f.title.value);
         callback(f.title.value, f.description.value,
             f.dueDate.value, f.priority.value,
             f.notes.value, f.checklist.value);
