@@ -17,7 +17,7 @@ export function createProjectList() {
     return projects;
 }
 
-export function addProject(projects, name = "Default") {
+export function addProject(projects, name) {
     const project = createProject(name, true);
     projects.forEach((project) => project.active = false);
     projects.push(project);
@@ -30,7 +30,7 @@ export function deleteProject(projects, id) {
     save(projectsString, projects);
 }
 
-function createProject(name = "Default", active) {
+function createProject(name, active) {
     const toDoList = [];
     const id = crypto.randomUUID();
     return {
@@ -54,6 +54,7 @@ export function setProjectToActive(projects, id) {
     setAllProjectsToInactive(projects);
     const project = projects.find((project) => project.id === id);
     project.active = true;
+    save(projectsString, project);
 }
 
 function setAllProjectsToInactive(projects) {
