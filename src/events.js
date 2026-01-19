@@ -11,9 +11,9 @@ export function bindAddToDoBtn() {
     });
 }
 
-export function bindSubmitForm() {
+export function bindSubmitForm(callback) {
     dom.toDoForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        console.log("submit");
+        console.log(dom.toDoForm.title);
     })
 }

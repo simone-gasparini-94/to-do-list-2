@@ -17,16 +17,13 @@ function main() {
         dueDate, priority,
         notes, checklist) => {
             const todo = createTodo(
-                title,
-                description,
-                dueDate,
-                priority,
-                notes,
-                checklist
+                title, description,
+                dueDate, priority,
+                notes, checklist
             );
             addToDoToActiveProject(todo, projects);
         }
-    )
+    );
 }
 
 main();
