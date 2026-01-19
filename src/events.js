@@ -32,7 +32,6 @@ export function bindSubmitToDoForm(callback) {
 
 export function bindSubmitProjectForm(callback) {
     dom.projectForm.addEventListener("submit", (e) => {
-        e.preventDefault();
         hide(dom.projectForm);
         show(dom.addProject);
         const f = dom.projectForm.elements;
