@@ -12,7 +12,9 @@ export function addProject(projects, name = "Default") {
 
 function createProject(name = "Default", active) {
     let toDoList = [];
+    const id = crypto.randomUUID();
     return {
+        id,
         name,
         toDoList,
         active

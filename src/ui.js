@@ -13,6 +13,7 @@ export function renderProjects(projects) {
 function renderProject(project) {
     const button = document.createElement("button");
     button.classList.add("project");
+    button.dataset.id = project.id;
     button.textContent = project.name;
     dom.projects.appendChild(button);
 }

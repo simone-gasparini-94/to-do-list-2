@@ -39,3 +39,9 @@ export function bindSubmitProjectForm(callback) {
         callback(f.title.value);
     });
 }
+
+export function bindSelectProject(callback) {
+    dom.projects.addEventListener("click", (e) => {
+        console.log(e.target.dataset.id);
+    })
+}

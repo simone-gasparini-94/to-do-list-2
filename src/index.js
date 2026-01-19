@@ -15,6 +15,7 @@ import {
     bindAddProject,
     bindSubmitToDoForm,
     bindSubmitProjectForm,
+    bindSelectProject
 } from "./events";
 
 function main() {
@@ -38,7 +39,8 @@ function main() {
     bindSubmitProjectForm((title) => {
         addProject(projects, title);
         renderProjects(projects);
-    })
+    });
+    bindSelectProject();
 }
 
 main();
