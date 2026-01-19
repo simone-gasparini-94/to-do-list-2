@@ -18,6 +18,10 @@ import {
     bindSubmitProjectForm,
     bindSelectProject
 } from "./events";
+import {
+    projectsString, 
+    save
+} from "./storage";
 
 function main() {
     let projects = createProjectList();
@@ -34,6 +38,7 @@ function main() {
             const active = findActiveProject(projects);
             addToDoToActiveProject(todo, active);
             renderToDos(active.toDoList);
+            save(projectsString, projects);
         }
     );
     bindAddProject();

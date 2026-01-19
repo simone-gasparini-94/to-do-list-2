@@ -1,11 +1,11 @@
 import {
+    projectsString,
     isDatainStorage,
     load,
     save
 } from "./storage"
 
 export function createProjectList() {
-    const projectsString = "projects";
     let projects;
     if (isDatainStorage(projectsString) == true) {
         projects = load(projectsString);
@@ -21,6 +21,13 @@ export function addProject(projects, name = "Default") {
     const project = createProject(name, true);
     projects.forEach((project) => project.active = false);
     projects.push(project);
+    save(projectsString, projects);
+}
+
+export function deleteProject(projects, id) {
+    const index = projects.findIndexOf((project) => project.id == id);
+    projects.splice(index, 1);
+    save(projectsString, projects);
 }
 
 function createProject(name = "Default", active) {
