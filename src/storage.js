@@ -1,6 +1,6 @@
 export const projectsString = "projects";
 
-export function isDatainStorage(string) {
+export function isDataInStorage(string) {
     if (localStorage.getItem(string)) {
         return true;
     } else {

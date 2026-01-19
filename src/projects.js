@@ -1,13 +1,13 @@
 import {
     projectsString,
-    isDatainStorage,
+    isDataInStorage,
     load,
     save
 } from "./storage"
 
 export function createProjectList() {
     let projects;
-    if (isDatainStorage(projectsString) == true) {
+    if (isDataInStorage(projectsString) == true) {
         projects = load(projectsString);
     } else {
         projects = [];
@@ -54,7 +54,7 @@ export function setProjectToActive(projects, id) {
     setAllProjectsToInactive(projects);
     const project = projects.find((project) => project.id === id);
     project.active = true;
-    save(projectsString, project);
+    save(projectsString, projects);
 }
 
 function setAllProjectsToInactive(projects) {
