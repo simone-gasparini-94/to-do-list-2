@@ -1,6 +1,7 @@
 import { dom } from "./dom";
 
 export function renderProjects(projects) {
+    dom.projects.innerHTML = "";
     projects.forEach((project) => {
         renderProject(project);
         if (project.active) {
@@ -17,6 +18,7 @@ function renderProject(project) {
 }
 
 export function renderToDos(toDoList) {
+    dom.toDoList.innerHTML = "";
     toDoList.forEach((toDo) => {
         renderToDo(toDo);
     });
@@ -29,6 +31,10 @@ function renderToDo(toDo) {
     title.classList.add("title");
     title.textContent = toDo.title;
     div.appendChild(title);
+    const date = document.createElement("p");
+    date.classList.add("due-date");
+    date.textContent = toDo.dueDate;
+    div.appendChild(date);
     dom.toDoList.appendChild(div);
 }
 

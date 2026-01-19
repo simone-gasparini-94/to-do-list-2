@@ -4,8 +4,9 @@ export function createProjectList() {
     return projects;
 }
 
-export function addProject(projects, name = "Default", active) {
-    const project = createProject(name, active);
+export function addProject(projects, name = "Default") {
+    const project = createProject(name, true);
+    projects.forEach((project) => project.active = false);
     projects.push(project);
 }
 
