@@ -18,8 +18,11 @@ function createProject(name = "Default", active) {
     };
 }
 
-export function addToDoToActiveProject(todo, projects) {
-    projects.forEach(element => {
-        if (element.active) element.toDoList.push(todo);
-    });
+export function findActiveProject(projects) {
+    const active = projects.find((project) => project.active);
+    return active;
+}
+
+export function addToDoToActiveProject(todo, active) {
+    active.toDoList.push(todo);
 }

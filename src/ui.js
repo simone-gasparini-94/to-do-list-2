@@ -32,7 +32,7 @@ function renderToDo(toDo) {
     dom.toDoList.appendChild(div);
 }
 
-export function render(element) {
+export function show(element) {
     element.classList.remove("hidden");
 }
 

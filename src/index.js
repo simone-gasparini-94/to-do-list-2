@@ -1,9 +1,14 @@
 import "./styles/styles.css";
 import {
     addToDoToActiveProject,
-    createProjectList
+    createProjectList,
+    findActiveProject
 } from "./projects";
-import { renderProjects } from "./ui";
+import { createToDo } from "./todo";
+import { 
+    renderProjects,
+    renderToDos
+} from "./ui";
 import {
     bindAddToDoBtn,
     bindSubmitForm
@@ -16,12 +21,14 @@ function main() {
     bindSubmitForm((title, description,
         dueDate, priority,
         notes, checklist) => {
-            const todo = createTodo(
+            const todo = createToDo(
                 title, description,
                 dueDate, priority,
                 notes, checklist
             );
-            addToDoToActiveProject(todo, projects);
+            const active = findActiveProject(projects);
+            addToDoToActiveProject(todo, active);
+            renderToDos(active.toDoList);
         }
     );
 }
