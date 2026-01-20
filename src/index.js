@@ -16,7 +16,8 @@ import {
     bindAddProject,
     bindSubmitToDoForm,
     bindSubmitProjectForm,
-    bindSelectProject
+    bindSelectProject,
+    bindDeleteToDo
 } from "./events";
 import {
     projectsString, 
@@ -50,6 +51,9 @@ function main() {
         setProjectToActive(projects, id);
         renderProjects(projects);
     });
+    bindDeleteToDo((id) => {
+        console.log(id);
+    })
 }
 
 main();

@@ -44,3 +44,9 @@ export function bindSelectProject(callback) {
         callback(id);
     })
 }
+
+export function bindDeleteToDo(callback) {
+    dom.toDoList.addEventListener("click", (e) => {
+        console.log(e.target);
+    })
+}
