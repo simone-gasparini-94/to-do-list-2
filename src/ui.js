@@ -36,6 +36,10 @@ function renderToDo(toDo) {
     date.classList.add("due-date");
     date.textContent = toDo.dueDate;
     div.appendChild(date);
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("delete-btn");
+    deleteBtn.textContent = "Delete";
+    div.appendChild(deleteBtn);
     dom.toDoList.appendChild(div);
 }
 
