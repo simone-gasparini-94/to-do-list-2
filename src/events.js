@@ -4,7 +4,7 @@ import {
     hide
 } from "./ui";
 
-export function bindAddToDoBtn() {
+export function bindAddToDo() {
     dom.addToDo.addEventListener("click", () => {
         show(dom.toDoForm);
         hide(dom.addToDo);
@@ -19,8 +19,7 @@ export function bindAddProject() {
 }
 
 export function bindSubmitToDoForm(callback) {
-    dom.toDoForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    dom.toDoForm.addEventListener("submit", () => {
         hide(dom.toDoForm);
         show(dom.addToDo);
         const f = dom.toDoForm.elements;
@@ -31,7 +30,7 @@ export function bindSubmitToDoForm(callback) {
 }
 
 export function bindSubmitProjectForm(callback) {
-    dom.projectForm.addEventListener("submit", (e) => {
+    dom.projectForm.addEventListener("submit", () => {
         hide(dom.projectForm);
         show(dom.addProject);
         const f = dom.projectForm.elements;

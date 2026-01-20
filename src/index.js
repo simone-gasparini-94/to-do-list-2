@@ -12,7 +12,7 @@ import {
     renderToDos
 } from "./ui";
 import {
-    bindAddToDoBtn,
+    bindAddToDo,
     bindAddProject,
     bindSubmitToDoForm,
     bindSubmitProjectForm,
@@ -26,7 +26,8 @@ import {
 function main() {
     let projects = createProjectList();
     renderProjects(projects);
-    bindAddToDoBtn();
+    bindAddToDo();
+    bindAddProject();
     bindSubmitToDoForm((title, description,
         dueDate, priority,
         notes, checklist) => {
@@ -41,7 +42,6 @@ function main() {
             save(projectsString, projects);
         }
     );
-    bindAddProject();
     bindSubmitProjectForm((title) => {
         addProject(projects, title);
         renderProjects(projects);
