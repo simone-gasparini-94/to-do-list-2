@@ -5,4 +5,5 @@ export const dom = {
     addProject: document.querySelector("#add-project"),
     toDoForm: document.querySelector("#to-do-form"),
     projectForm: document.querySelector("#project-form"),
+    projectName: document.querySelector("#project-name")
 }
