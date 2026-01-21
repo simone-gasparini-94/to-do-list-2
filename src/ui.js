@@ -26,21 +26,22 @@ export function renderToDos(toDoList) {
 }
 
 function renderToDo(toDo) {
-    const div = document.createElement("div");
-    div.classList.add("to-do");
+    const todo = document.createElement("div");
+    todo.dataset.id = toDo.id;
+    todo.classList.add("to-do");
     const title = document.createElement("p");
     title.classList.add("title");
     title.textContent = toDo.title;
-    div.appendChild(title);
+    todo.appendChild(title);
     const date = document.createElement("p");
     date.classList.add("due-date");
     date.textContent = toDo.dueDate;
-    div.appendChild(date);
+    todo.appendChild(date);
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("delete-btn");
     deleteBtn.textContent = "Delete";
-    div.appendChild(deleteBtn);
-    dom.toDoList.appendChild(div);
+    todo.appendChild(deleteBtn);
+    dom.toDoList.appendChild(todo);
 }
 
 export function show(element) {
