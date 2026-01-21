@@ -47,6 +47,7 @@ export function bindSelectProject(callback) {
 
 export function bindDeleteToDo(callback) {
     dom.toDoList.addEventListener("click", (e) => {
-        console.log(e.target.closest(".to-do"));
+        const id = e.target.closest(".to-do").dataset.id;
+        callback(id);
     })
 }
