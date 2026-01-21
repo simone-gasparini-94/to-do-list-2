@@ -5,6 +5,7 @@ export function renderProjects(projects) {
     projects.forEach((project) => {
         renderProject(project);
         if (project.active) {
+            dom.projectName.textContent = project.name;
             renderToDos(project.toDoList);
         }
     });
