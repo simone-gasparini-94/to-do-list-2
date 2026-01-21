@@ -47,7 +47,9 @@ export function bindSelectProject(callback) {
 
 export function bindDeleteToDo(callback) {
     dom.toDoList.addEventListener("click", (e) => {
-        const id = e.target.closest(".to-do").dataset.id;
-        callback(id);
+        if (e.target.classList.contains("delete-btn")) {
+            const id = e.target.closest(".to-do").dataset.id;
+            callback(id);
+        }
     })
 }
