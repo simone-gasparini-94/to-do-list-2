@@ -15,7 +15,7 @@ export function bindAddProject() {
     dom.addProject.addEventListener("click", () => {
         show(dom.projectForm);
         hide(dom.addProject);
-    })
+    });
 }
 
 export function bindSubmitToDoForm(callback) {
@@ -42,7 +42,7 @@ export function bindSelectProject(callback) {
     dom.projects.addEventListener("click", (e) => {
         const id = e.target.dataset.id;
         callback(id);
-    })
+    });
 }
 
 export function bindDeleteToDo(callback) {
@@ -52,5 +52,5 @@ export function bindDeleteToDo(callback) {
             console.log(id);
             callback(id);
         }
-    })
+    });
 }

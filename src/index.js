@@ -60,7 +60,7 @@ function main() {
         removeToDo(index, active);
         renderToDos(active.toDoList);
         save(projectsString, projects);
-    })
+    });
 }
 
 main();
