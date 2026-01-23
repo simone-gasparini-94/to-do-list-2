@@ -1,9 +1,12 @@
 import "./styles/styles.css";
 import {
     addProject,
-    addToDoToActiveProject,
+    deleteProject,
+    addToDo,
+    removeToDo,
     createProjectList,
     findActiveProject,
+    findToDoIndex,
     setProjectToActive
 } from "./projects";
 import { createToDo } from "./todo";
@@ -38,7 +41,7 @@ function main() {
                 notes, checklist
             );
             const active = findActiveProject(projects);
-            addToDoToActiveProject(todo, active);
+            addToDo(todo, active);
             renderToDos(active.toDoList);
             save(projectsString, projects);
         }
@@ -52,7 +55,11 @@ function main() {
         renderProjects(projects);
     });
     bindDeleteToDo((id) => {
-        console.log(id);
+        const active = findActiveProject(projects);
+        const index = findToDoIndex(active.toDoList, id);
+        removeToDo(index, active);
+        renderToDos(active.toDoList);
+        save(projectsString, projects);
     })
 }
 

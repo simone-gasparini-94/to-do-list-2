@@ -28,7 +28,7 @@ export function addProject(projects, name) {
 }
 
 export function deleteProject(projects, id) {
-    const index = projects.findIndexOf((project) => project.id == id);
+    const index = projects.findIndex((project) => project.id == id);
     projects.splice(index, 1);
     save(projectsString, projects);
 }
@@ -49,7 +49,7 @@ export function findActiveProject(projects) {
     return activeProject;
 }
 
-export function addToDoToActiveProject(todo, active) {
+export function addToDo(todo, active) {
     active.toDoList.push(todo);
 }
 
@@ -64,4 +64,13 @@ function setAllProjectsToInactive(projects) {
     projects.forEach((project) => {
         project.active = false;
     });
+}
+
+export function findToDoIndex(list, id) {
+    const index = list.findIndex((element) => element.id === id);
+    return index;
+}
+
+export function removeToDo(index, active) {
+    active.toDoList.splice(index, 1);
 }
