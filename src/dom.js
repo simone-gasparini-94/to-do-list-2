@@ -3,7 +3,9 @@ export const dom = {
     toDoList: document.querySelector(".to-do-container"),
     addToDo: document.querySelector("#add-to-do"),
     addProject: document.querySelector("#add-project"),
+    deleteProject: document.querySelector("#delete-project"),
     toDoForm: document.querySelector("#to-do-form"),
     projectForm: document.querySelector("#project-form"),
-    projectName: document.querySelector("#project-name")
+    projectName: document.querySelector("#project-name"),
+    main: document.querySelector(".main")
 }

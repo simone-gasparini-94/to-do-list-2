@@ -52,3 +52,7 @@ export function show(element) {
 export function hide(element) {
     element.classList.add("hidden");
 }
+
+export function hideMainSection() {
+    hide(dom.main);
+}

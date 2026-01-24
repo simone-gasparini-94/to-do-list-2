@@ -7,12 +7,14 @@ import {
     createProjectList,
     findActiveProject,
     findToDoIndex,
-    setProjectToActive
+    setProjectToActive,
+    setFirstProjectToActive
 } from "./projects";
 import { createToDo } from "./todo";
 import { 
     renderProjects,
-    renderToDos
+    renderToDos,
+    hideMainSection
 } from "./ui";
 import {
     bindAddToDo,
@@ -20,7 +22,8 @@ import {
     bindSubmitToDoForm,
     bindSubmitProjectForm,
     bindSelectProject,
-    bindDeleteToDo
+    bindDeleteToDo,
+    bindDeleteProject
 } from "./events";
 import {
     projectsString, 
@@ -65,6 +68,16 @@ function main() {
         renderToDos(active.toDoList);
         save(projectsString, projects);
     });
+    bindDeleteProject(() => {
+        const active = findActiveProject(projects);
+        deleteProject(projects, active.id);
+        if (projects.length > 0) {
+            setFirstProjectToActive(projects);
+        } else {
+            hideMainSection();
+        }
+        renderProjects(projects);
+    })
 }
 
 main();

@@ -30,7 +30,7 @@ export function bindSubmitToDoForm(callback) {
 }
 
 export function bindSubmitProjectForm(callback) {
-    dom.projectForm.addEventListener("submit", (e) => {
+    dom.projectForm.addEventListener("submit", () => {
         hide(dom.projectForm);
         show(dom.addProject);
         const f = dom.projectForm.elements;
@@ -49,8 +49,13 @@ export function bindDeleteToDo(callback) {
     dom.toDoList.addEventListener("click", (e) => {
         if (e.target.classList.contains("delete-btn")) {
             const id = e.target.closest(".to-do").dataset.id;
-            console.log(id);
             callback(id);
         }
+    });
+}
+
+export function bindDeleteProject(callback) {
+    dom.deleteProject.addEventListener("click", () => {
+        callback()
     });
 }

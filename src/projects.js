@@ -60,6 +60,10 @@ export function setProjectToActive(projects, id) {
     save(projectsString, projects);
 }
 
+export function setFirstProjectToActive(projects) {
+    setProjectToActive(projects, projects[0].id);
+}
+
 function setAllProjectsToInactive(projects) {
     projects.forEach((project) => {
         project.active = false;
