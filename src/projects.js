@@ -50,7 +50,7 @@ export function findActiveProject(projects) {
 }
 
 export function addToDo(todo, active) {
-    active.toDoList.push(todo);
+    active.toDoList.unshift(todo);
 }
 
 export function setProjectToActive(projects, id) {

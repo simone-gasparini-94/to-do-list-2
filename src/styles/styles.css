@@ -6,10 +6,6 @@ body {
     display: flex;
 }
 
-.sidebar {
-    border-right: 1px solid #000;
-}
-
 .projects-container {
     display: flex;
     flex-direction: column;
