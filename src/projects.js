@@ -18,11 +18,11 @@ export function createProjectList() {
 }
 
 export function addProject(projects, name) {
-    const project = createProject(name, true);
-    if (projects.some((element) => element.name === project.name)) {
+    if (projects.some((element) => element.name === name)) {
         throw new Error(`Project ${name} already exists`);
     }
     projects.forEach((project) => project.active = false);
+    const project = createProject(name, true);
     projects.push(project);
     save(projectsString, projects);
 }

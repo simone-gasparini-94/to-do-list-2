@@ -47,8 +47,12 @@ function main() {
         }
     );
     bindSubmitProjectForm((title) => {
-        addProject(projects, title);
-        renderProjects(projects);
+        try {
+            addProject(projects, title);
+            renderProjects(projects);
+        } catch (err) {
+            alert(err.message);
+        }
     });
     bindSelectProject((id) => {
         setProjectToActive(projects, id);
