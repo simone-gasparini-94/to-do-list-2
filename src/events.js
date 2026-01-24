@@ -25,7 +25,7 @@ export function bindSubmitToDoForm(callback) {
         const f = dom.toDoForm.elements;
         callback(f.title.value, f.description.value,
             f.dueDate.value, f.priority.value,
-            f.notes.value, f.checklist.value);
+            f.notes.value, f.checklist.checked);
     });
 }
 
