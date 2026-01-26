@@ -30,19 +30,22 @@ function renderToDo(toDo) {
     const todo = document.createElement("div");
     todo.dataset.id = toDo.id;
     todo.classList.add("to-do");
-    const title = document.createElement("p");
-    title.classList.add("title");
-    title.textContent = toDo.title;
-    todo.appendChild(title);
-    const date = document.createElement("p");
-    date.classList.add("due-date");
-    date.textContent = toDo.dueDate;
-    todo.appendChild(date);
-    const deleteBtn = document.createElement("button");
-    deleteBtn.classList.add("delete-btn");
-    deleteBtn.textContent = "Delete";
-    todo.appendChild(deleteBtn);
+    console.table(toDo);
+    appendElement(todo, "p", toDo.title, "title", false);
+    appendElement(todo, "p", toDo.description, "description", true);
+    appendElement(todo, "p", toDo.dueDate, "due-date", false);
+    appendElement(todo, "p", toDo.priority, "priority", true);
+    appendElement(todo, "p", toDo.notes, "notes", true);
+    appendElement(todo, "button", "Delete", "delete-btn", false);
     dom.toDoList.appendChild(todo);
+}
+
+function appendElement(todo, type, text, className, hidden) {
+    const element = document.createElement(type);
+    element.classList.add(className);
+    if (hidden) element.classList.add("hidden");
+    element.textContent = text;
+    todo.appendChild(element);
 }
 
 export function show(element) {
