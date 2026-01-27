@@ -36,6 +36,7 @@ function renderToDo(toDo) {
     appendElement(todo, "p", toDo.dueDate, "due-date", false);
     appendElement(todo, "p", toDo.priority, "priority", true);
     appendElement(todo, "p", toDo.notes, "notes", true);
+    appendElement(todo, "button", "Show more", "show-more", false);
     appendElement(todo, "button", "Delete", "delete-btn", false);
     dom.toDoList.appendChild(todo);
 }
