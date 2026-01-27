@@ -30,7 +30,6 @@ function renderToDo(toDo) {
     const todo = document.createElement("div");
     todo.dataset.id = toDo.id;
     todo.classList.add("to-do");
-    console.table(toDo);
     appendElement(todo, "p", toDo.title, "title", false);
     appendElement(todo, "p", toDo.description, "description", true);
     appendElement(todo, "p", toDo.dueDate, "due-date", false);

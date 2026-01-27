@@ -49,9 +49,25 @@ export function bindDeleteToDo(callback) {
     dom.toDoList.addEventListener("click", (e) => {
         if (e.target.classList.contains("delete-btn")) {
             const id = e.target.closest(".to-do").dataset.id;
+            if (!id) return;
             callback(id);
         }
     });
+}
+
+export function bindShowMore() {
+    dom.toDoList.addEventListener("click", (e) => {
+        if (e.target.classList.contains("show-more")) {
+            const todo = e.target.closest(".to-do");
+            if (!todo) return;
+            show(todo.querySelector(".description"));
+            show(todo.querySelector(".priority"));
+            show(todo.querySelector(".notes"));
+            e.target.classList.remove("show-more");
+            e.target.classList.add("show-less");
+            e.target.textContent = "Show less";
+        }
+    })
 }
 
 export function bindDeleteProject(callback) {

@@ -23,7 +23,8 @@ import {
     bindSubmitProjectForm,
     bindSelectProject,
     bindDeleteToDo,
-    bindDeleteProject
+    bindDeleteProject,
+    bindShowMore
 } from "./events";
 import {
     projectsString, 
@@ -77,7 +78,8 @@ function main() {
             hideMainSection();
         }
         renderProjects(projects);
-    })
+    });
+    bindShowMore();
 }
 
 main();
