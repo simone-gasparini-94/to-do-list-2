@@ -26,13 +26,12 @@ import {
     bindDeleteProject,
     bindShowMore
 } from "./events";
-import {
-    projectsString, 
-    save
-} from "./storage";
+import { projectsString, save } from "./storage";
+import { createForm } from "./form";
 
 function main() {
-    let projects = createProjectList();
+    const projects = createProjectList();
+    const form = createForm();
     renderProjects(projects);
     bindAddToDo();
     bindAddProject();
