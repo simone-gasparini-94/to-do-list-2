@@ -1,7 +1,9 @@
 import { dom } from "./dom";
 import { 
     show,
-    hide
+    hide,
+    toggleHidden,
+    toggleNameShowMore
 } from "./ui";
 
 export function bindAddToDo() {
@@ -60,12 +62,10 @@ export function bindShowMore() {
         if (e.target.classList.contains("show-more")) {
             const todo = e.target.closest(".to-do");
             if (!todo) return;
-            show(todo.querySelector(".description"));
-            show(todo.querySelector(".priority"));
-            show(todo.querySelector(".notes"));
-            e.target.classList.remove("show-more");
-            e.target.classList.add("show-less");
-            e.target.textContent = "Show less";
+            toggleHidden(todo.querySelector(".description"));
+            toggleHidden(todo.querySelector(".priority"));
+            toggleHidden(todo.querySelector(".notes"));
+            toggleNameShowMore(e.target);
         }
     })
 }

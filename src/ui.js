@@ -48,6 +48,22 @@ function appendElement(todo, type, text, className, hidden) {
     todo.appendChild(element);
 }
 
+export function toggleNameShowMore(element) {
+    if (element.textContent === "Show more") {
+        element.textContent = "Show less";
+    } else {
+        element.textContent = "Show more";
+    }
+}
+
+export function toggleHidden(element) {
+    if (element.classList.contains("hidden")) {
+        element.classList.remove("hidden");
+    } else {
+        element.classList.add("hidden");
+    }
+}
+
 export function show(element) {
     element.classList.remove("hidden");
 }
