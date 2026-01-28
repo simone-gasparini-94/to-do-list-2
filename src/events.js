@@ -9,12 +9,14 @@ import {
 export function bindAddToDo() {
     dom.addToDo.addEventListener("click", () => {
         show(dom.toDoForm);
+        hide(dom.addToDo);
     });
 }
 
 export function bindAddProject() {
     dom.addProject.addEventListener("click", () => {
         show(dom.projectForm);
+        hide(dom.addProject);
     });
 }
 
