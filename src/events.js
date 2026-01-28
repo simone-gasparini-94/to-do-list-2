@@ -16,6 +16,12 @@ export function bindAddProject() {
     dom.addProject.addEventListener("click", () => {
         show(dom.projectForm);
     });
+} 
+
+export function bindEditProject(form) {
+    dom.editProject.addEventListener("click", () => {
+        console.log("edit project");
+    });
 }
 
 export function bindSubmitToDoForm(callback) {

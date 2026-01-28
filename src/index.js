@@ -19,6 +19,7 @@ import {
 import {
     bindAddToDo,
     bindAddProject,
+    bindEditProject,
     bindSubmitToDoForm,
     bindSubmitProjectForm,
     bindSelectProject,
@@ -35,6 +36,7 @@ function main() {
     renderProjects(projects);
     bindAddToDo();
     bindAddProject();
+    bindEditProject(form);
     bindSubmitToDoForm((title, description,
         dueDate, priority,
         notes, checklist) => {
