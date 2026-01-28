@@ -57,11 +57,8 @@ export function toggleNameShowMore(element) {
 }
 
 export function toggleHidden(element) {
-    if (element.classList.contains("hidden")) {
-        element.classList.remove("hidden");
-    } else {
-        element.classList.add("hidden");
-    }
+    if (!element) return ;
+    element.classList.toggle("hidden");
 }
 
 export function show(element) {
