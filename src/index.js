@@ -28,15 +28,15 @@ import {
     bindShowMore
 } from "./events";
 import { projectsString, save } from "./storage";
-import { createForm } from "./form";
+import { createForms } from "./form";
 
 function main() {
     const projects = createProjectList();
-    const form = createForm();
+    const forms = createForms();
     renderProjects(projects);
     bindAddToDo();
-    bindAddProject();
-    bindEditProject(form);
+    bindAddProject(forms);
+    bindEditProject(forms);
     bindSubmitToDoForm((title, description,
         dueDate, priority,
         notes, checklist) => {
