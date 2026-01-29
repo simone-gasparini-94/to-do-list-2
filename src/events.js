@@ -8,12 +8,14 @@ import {
 
 export function bindAddToDo() {
     dom.addToDo.addEventListener("click", () => {
+        form.project
         show(dom.toDoForm);
     });
 }
 
-export function bindAddProject() {
+export function bindAddProject(form) {
     dom.addProject.addEventListener("click", () => {
+
         show(dom.projectForm);
     });
 } 

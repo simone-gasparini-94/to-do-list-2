@@ -35,8 +35,8 @@ function main() {
     const forms = createForms();
     renderProjects(projects);
     bindAddToDo();
-    bindAddProject(forms);
-    bindEditProject(forms);
+    bindAddProject(forms.project);
+    bindEditProject(forms.project);
     bindSubmitToDoForm((title, description,
         dueDate, priority,
         notes, checklist) => {
