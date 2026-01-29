@@ -22,5 +22,5 @@ export function findToDoIndex(list, id) {
 
 export function findToDoEdit(list) {
     const todo = list.find((element) => element.edit);
-    console.log(todo);
+    return todo;
 }
