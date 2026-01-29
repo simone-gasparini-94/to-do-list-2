@@ -15,7 +15,8 @@ import { createToDo } from "./todo";
 import { 
     renderProjects,
     renderToDos,
-    hideMainSection
+    hideMainSection,
+    showMainSection
 } from "./ui";
 import {
     bindAddToDo,
@@ -33,6 +34,7 @@ import { createForms } from "./form";
 
 function main() {
     const projects = createProjectList();
+    if (projects.length === 0) hideMainSection();
     const forms = createForms();
     renderProjects(projects);
     bindAddToDo();
@@ -62,6 +64,7 @@ function main() {
         try {
             if (forms.project.add === true) {
                 addProject(projects, name);
+                showMainSection();
             } else if (forms.project.edit === true) {
                 const active = findActiveProject(projects);
                 editProject(projects, active, name);

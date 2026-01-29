@@ -73,3 +73,7 @@ export function hide(element) {
 export function hideMainSection() {
     hide(dom.main);
 }
+
+export function showMainSection() {
+    show(dom.main);
+}
