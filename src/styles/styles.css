@@ -3,7 +3,12 @@
 }
 
 body {
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+}
+
+.main {
+    padding-left: 32px;
 }
 
 .projects-container {

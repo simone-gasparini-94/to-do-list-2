@@ -8,21 +8,21 @@ import {
 
 export function bindAddToDo() {
     dom.addToDo.addEventListener("click", () => {
-        form.project
         show(dom.toDoForm);
     });
 }
 
-export function bindAddProject(form) {
+export function bindAddProject(callback) {
     dom.addProject.addEventListener("click", () => {
-
         show(dom.projectForm);
+        callback();
     });
 } 
 
-export function bindEditProject(form) {
+export function bindEditProject(callback) {
     dom.editProject.addEventListener("click", () => {
-        console.log("edit project");
+        show(dom.projectForm);
+        callback();
     });
 }
 
