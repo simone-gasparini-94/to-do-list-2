@@ -75,10 +75,6 @@ function setAllProjectsToInactive(projects) {
     });
 }
 
-export function findToDoIndex(list, id) {
-    const index = list.findIndex((element) => element.id === id);
-    return index;
-}
 
 export function removeToDo(index, active) {
     active.toDoList.splice(index, 1);

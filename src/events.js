@@ -6,9 +6,10 @@ import {
     toggleNameShowMore
 } from "./ui";
 
-export function bindAddToDo() {
+export function bindAddToDo(callback) {
     dom.addToDo.addEventListener("click", () => {
         show(dom.toDoForm);
+        callback();
     });
 }
 
@@ -17,7 +18,16 @@ export function bindAddProject(callback) {
         show(dom.projectForm);
         callback();
     });
-} 
+}
+
+export function bindEditToDo(callback) {
+    dom.toDoList.addEventListener("click", (e) => {
+        const todo = e.target.closest(".to-do");
+        const id = todo.dataset.id;
+        show(dom.toDoForm);
+        callback(id);
+    });
+}
 
 export function bindEditProject(callback) {
     dom.editProject.addEventListener("click", () => {
@@ -27,7 +37,8 @@ export function bindEditProject(callback) {
 }
 
 export function bindSubmitToDoForm(callback) {
-    dom.toDoForm.addEventListener("submit", () => {
+    dom.toDoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         hide(dom.toDoForm);
         const f = dom.toDoForm.elements;
         callback(f.title.value, f.description.value,
@@ -37,8 +48,7 @@ export function bindSubmitToDoForm(callback) {
 }
 
 export function bindSubmitProjectForm(callback) {
-    dom.projectForm.addEventListener("submit", (e) => {
-        e.preventDefault();
+    dom.projectForm.addEventListener("submit", () => {
         hide(dom.projectForm);
         const f = dom.projectForm.elements;
         callback(f.title.value);
