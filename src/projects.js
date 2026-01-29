@@ -27,6 +27,11 @@ export function addProject(projects, name) {
     save(projectsString, projects);
 }
 
+export function editProject(projects, project, name) {
+    project.name = name;
+    save(projectsString, projects);
+}
+
 export function deleteProject(projects, id) {
     const index = projects.findIndex((project) => project.id == id);
     projects.splice(index, 1);

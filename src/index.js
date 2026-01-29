@@ -1,6 +1,7 @@
 import "./styles/styles.css";
 import {
     addProject,
+    editProject,
     deleteProject,
     addToDo,
     removeToDo,
@@ -57,13 +58,18 @@ function main() {
             save(projectsString, projects);
         }
     );
-    bindSubmitProjectForm((title) => {
+    bindSubmitProjectForm((name) => {
         try {
-            addProject(projects, title);
-            renderProjects(projects);
+            if (forms.project.add === true) {
+                addProject(projects, name);
+            } else if (forms.project.edit === true) {
+                const active = findActiveProject(projects);
+                editProject(projects, active, name);
+            }
         } catch (err) {
             alert(err.message);
         }
+        renderProjects(projects);
     });
     bindSelectProject((id) => {
         setProjectToActive(projects, id);
