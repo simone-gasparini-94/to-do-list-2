@@ -22,6 +22,8 @@ export function bindAddProject(callback) {
 
 export function bindEditToDo(callback) {
     dom.toDoList.addEventListener("click", (e) => {
+        const button = e.target.closest(".edit-btn");
+        if (!button) return;
         const todo = e.target.closest(".to-do");
         const id = todo.dataset.id;
         show(dom.toDoForm);
@@ -72,7 +74,7 @@ export function bindDeleteToDo(callback) {
     });
 }
 
-export function bindShowMore() {
+export function bindShowMoreToDo() {
     dom.toDoList.addEventListener("click", (e) => {
         if (e.target.classList.contains("show-more")) {
             const todo = e.target.closest(".to-do");
