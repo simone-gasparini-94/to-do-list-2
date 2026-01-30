@@ -13,7 +13,8 @@ import {
 import { 
     createToDo,
     findToDoIndex,
-    findToDoEdit
+    findToDoEdit,
+    editToDo
 } from "./todo";
 import { 
     renderProjects,
@@ -110,7 +111,9 @@ function bindToDoEvents(projects, forms) {
                 addToDo(todo, active);
             } else if (forms.todo.edit === true) {
                 const todo = findToDoEdit(active.toDoList);
-                //edit todo
+                editToDo(todo, title, description, 
+                    dueDate, priority,
+                    notes, checklist);
             }
             renderToDos(active.toDoList);
             save(projectsString, projects);
