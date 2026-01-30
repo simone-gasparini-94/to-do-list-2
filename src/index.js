@@ -110,6 +110,7 @@ function bindToDoEvents(projects, forms) {
                 addToDo(todo, active);
             } else if (forms.todo.edit === true) {
                 const todo = findToDoEdit(active.toDoList);
+                //edit todo
             }
             renderToDos(active.toDoList);
             save(projectsString, projects);
